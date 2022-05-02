@@ -1,16 +1,19 @@
-# POKEDEX
+![pokedex](https://user-images.githubusercontent.com/98977257/166308806-5981b6c9-e4ed-4705-a794-8123e6ae48fc.png)
 
-Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
-
+## Sobre
 Link do Surge: www.link.com.br
 
-O que funciona:
-- Item 1
-- Item 2
+Link da API: https://pokeapi.co
 
-O que não funciona: 
-- Item 3
-- Item 4
+## Nome dos integrantes: 
+- Ariane Tier de Mello
+- Davi de Araujo Gomes
+- Erick Felipe Silva e Silva
+
+## O que funciona:
+- No momento nada funciona.
+
+## O que não funciona: 
+- No momento tudo não funciona.
+
+## Imagens 

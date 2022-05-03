@@ -31,7 +31,7 @@ const FooterContainer = styled.div`
   justify-content: center;
   color: white;
 
-` 
+`
 
 
 export default function DetailsPage() {
@@ -42,29 +42,29 @@ export default function DetailsPage() {
         <h1>POKEDEX</h1>
       </HeaderContainer>
       <SubHeader>
-      <button onClick={()=>goBack(navigate)}>Voltar</button>
-      <button onClick={()=>goToHomePage(navigate)}>Home</button>
-        </SubHeader>
+        <button onClick={() => goBack(navigate)}>Voltar</button>
+        <button onClick={() => goToHomePage(navigate)}>Home</button>
+      </SubHeader>
       <DetailContainer>
-      <h2>DetailContainer</h2>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-      <p>CONTEUDO</p>
-       </DetailContainer>
-       <FooterContainer>
-       <p>@2022 - Todos os direitos reservados</p>
-       </FooterContainer>
+        <h2>DetailContainer</h2>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+        <p>CONTEUDO</p>
+      </DetailContainer>
+      <FooterContainer>
+        <p>@2022 - Todos os direitos reservados</p>
+      </FooterContainer>
     </div>
   )
 }

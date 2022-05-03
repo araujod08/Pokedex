@@ -39,25 +39,51 @@ color: white;
 
 export default function HomePage(){
   const navigate = useNavigate()
-  const [pokemon, setPokemon] = useState([])
-  const getPokemon = () => {
+  const [pokemons, setPokemons] = useState([])
+  const [detail, setDetail] = useState([])
+
+
+  const getPokemons = () => {
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
       .then((response) => {
         console.log(response)
-        setPokemon(response.data.results)
+        setPokemons(response.data.results)
       })
       .catch((error) => {
         alert("esta dando erro")
       })
   }
   useEffect(() => {
-    getPokemon()
-  }, [])
 
-  const listPokemon = pokemon.map((list) => {
+    getPokemons()
+  },[]) 
+
+
+  useEffect(()=>{
+    const newPokemons = []
+    pokemons && pokemons.forEach((poke)=>{
+      axios.get(`https://pokeapi.co/api/v2/pokemon/${poke.name}`)
+      .then((response) => {
+        console.log(response.data)
+        newPokemons.push(response.data)
+        if (newPokemons.length===20){
+          setDetail(newPokemons)
+        }
+        
+        
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+      
+    })   
+  },[pokemons])
+  const listPokemons = detail && detail.map((pokemon) => {
     return (
-      <div key={list.name} list={pokemon}>
-        <p>{list.name}</p>
+
+      <div key={pokemon.id}pokemon={pokemon}>
+        <img src={pokemon.sprites.other.dream_world.front_default}/>
+        
 
       </div>
     )
@@ -72,7 +98,7 @@ export default function HomePage(){
       </SubHeader>
       <HomeContainer>
         <h2>HomePage</h2>
-        {listPokemon}
+        {listPokemons}
       </HomeContainer>
       <FooterContainer>
         <p>@2022 - Todos os direitos reservados</p>

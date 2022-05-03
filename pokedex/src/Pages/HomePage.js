@@ -3,18 +3,21 @@ import { useNavigate } from 'react-router-dom'
 import { goToPokedexPage } from '../routes/Coordinator'
 import styled from 'styled-components'
 import axios from 'axios'
-
+import Imagem from '../img/Header2.png'
 
 const HeaderContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #22262c;
-
+display: flex;
+flex-direction: column;
+align-items: center;
+img{
+width: 100%;
+height: 100px;
+}
 `
+
 const SubHeader = styled.div`
 display: flex;
-background-color: yellow;
+/* background-color: yellow; */
 flex-direction: column;
 align-items: center;
 `
@@ -22,19 +25,19 @@ const HomeContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-background-color: blue;
-color: white;
+background-color:red;
+color:white;
 `
 const FooterContainer = styled.div`
-  background-color: #0e141b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+background-color: #0e141b;
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
 `
 
 
-export default function HomePage() {
+export default function HomePage(){
   const navigate = useNavigate()
   const [pokemons, setPokemons] = useState([])
   const [detail, setDetail] = useState([])
@@ -51,8 +54,10 @@ export default function HomePage() {
       })
   }
   useEffect(() => {
+
     getPokemons()
   },[]) 
+
 
   useEffect(()=>{
     const newPokemons = []
@@ -75,16 +80,18 @@ export default function HomePage() {
   },[pokemons])
   const listPokemons = detail && detail.map((pokemon) => {
     return (
+
       <div key={pokemon.id}pokemon={pokemon}>
         <img src={pokemon.sprites.other.dream_world.front_default}/>
         
+
       </div>
     )
   })
   return (
     <div>
       <HeaderContainer>
-        <h1>POKEDEX</h1>
+        <img src={Imagem} />
       </HeaderContainer>
       <SubHeader>
         <button onClick={() => goToPokedexPage(navigate)}>Pokedex</button>

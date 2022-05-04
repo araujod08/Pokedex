@@ -9,9 +9,10 @@ const HeaderContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+
 img{
-width: 100%;
-height: 100px;
+width: 50vw;
+
 }
 `
 
@@ -21,13 +22,38 @@ display: flex;
 flex-direction: column;
 align-items: center;
 `
-const HomeContainer = styled.div`
+const CardContainer = styled.div`
 display: flex;
+color:white;
+list-style-type:none;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap: 20px;
+    justify-content: center;
+`
+const Cardzinhos = styled.div`
+display: flex;
+width: 300px;
+height: 300px;
 flex-direction: column;
 align-items: center;
-background-color:red;
-color:white;
+border: 5px double aqua ;
+padding: 15px;
+img{
+  width: 100px;
+
+}
 `
+const Botoes = styled.div`
+display: flex;
+
+`
+
+
 const FooterContainer = styled.div`
 background-color: #0e141b;
 display: flex;
@@ -37,7 +63,7 @@ color: white;
 `
 
 
-export default function HomePage(){
+export default function HomePage() {
   const navigate = useNavigate()
   const [pokemons, setPokemons] = useState([])
   const [detail, setDetail] = useState([])
@@ -56,36 +82,40 @@ export default function HomePage(){
   useEffect(() => {
 
     getPokemons()
-  },[]) 
+  }, [])
 
 
-  useEffect(()=>{
+  useEffect(() => {
     const newPokemons = []
-    pokemons && pokemons.forEach((poke)=>{
+    pokemons && pokemons.forEach((poke) => {
       axios.get(`https://pokeapi.co/api/v2/pokemon/${poke.name}`)
-      .then((response) => {
-        console.log(response.data)
-        newPokemons.push(response.data)
-        if (newPokemons.length===20){
-          setDetail(newPokemons)
-        }
-        
-        
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-      
-    })   
-  },[pokemons])
+        .then((response) => {
+          console.log(response.data)
+          newPokemons.push(response.data)
+          if (newPokemons.length === 20) {
+            setDetail(newPokemons)
+          }
+
+
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+
+    })
+  }, [pokemons])
   const listPokemons = detail && detail.map((pokemon) => {
     return (
 
-      <div key={pokemon.id}pokemon={pokemon}>
-        <img src={pokemon.sprites.other.dream_world.front_default}/>
-        
+      <Cardzinhos key={pokemon.id} pokemon={pokemon}>
+        <img src={pokemon.sprites.other.dream_world.front_default} />
+      <p>{pokemon.name.toUpperCase()}</p>
+      <Botoes>
+      <button>add pokemon</button>
+      <button>detalhes</button>
+      </Botoes>
+      </Cardzinhos>
 
-      </div>
     )
   })
   return (
@@ -96,10 +126,9 @@ export default function HomePage(){
       <SubHeader>
         <button onClick={() => goToPokedexPage(navigate)}>Pokedex</button>
       </SubHeader>
-      <HomeContainer>
-        <h2>HomePage</h2>
-        {listPokemons}
-      </HomeContainer>
+      <CardContainer>
+          {listPokemons} 
+      </CardContainer>
       <FooterContainer>
         <p>@2022 - Todos os direitos reservados</p>
       </FooterContainer>

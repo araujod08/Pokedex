@@ -3,13 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import { goBack, goToHomePage } from '../routes/Coordinator'
 import styled from 'styled-components'
 import axios from 'axios'
+import Imagem from '../img/Header2.png'
 
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #22262c;
-
+  img{
+width: 60vw;
+}
 `
 const SubHeader = styled.div`
 display: flex;
@@ -68,7 +71,7 @@ export default function DetailsPage() {
           console.log(error)
         })
     })
-  }, [pokemons])
+  },[pokemons])
 
   const listPokemons = detail && detail.map((pokemon) => {
     return (
@@ -93,7 +96,7 @@ export default function DetailsPage() {
   return (
     <div>
       <HeaderContainer>
-        <h1>POKEDEX</h1>
+      <img src={Imagem} />
       </HeaderContainer>
       <SubHeader>
         <button onClick={() => goBack(navigate)}>Voltar</button>

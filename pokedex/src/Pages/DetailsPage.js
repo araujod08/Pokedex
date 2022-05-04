@@ -41,43 +41,55 @@ export default function DetailsPage() {
   const [pokemons, setPokemons] = useState([])
   const [detail, setDetail] = useState([])
 
-  const getPokemons = () =>{
+  const getPokemons = () => {
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
-    .then((res)=>{
-      console.log(res)
-      setPokemons(res.data.results)
-    }).catch((err)=>{
-      alert("erro")
-    })
-  }
-  useEffect(()=>{
-    getPokemons()
-  },[])
-
-  useEffect(()=>{
-    const newPokemons = []
-    pokemons && pokemons.forEach((poke)=>{
-      axios.get(`https://pokeapi.co/api/v2/pokemon/${poke.name}`)
-      .then((response)=>{
-        console.log(response.data)
-        newPokemons.push(response.data)
-        if(newPokemons.length===20){
-          setDetail(newPokemons)
-        } 
-      }).catch((error)=>{
-        console.log(error)
+      .then((res) => {
+        console.log(res)
+        setPokemons(res.data.results)
+      }).catch((err) => {
+        alert("erro")
       })
-    })
-  },[pokemons])
+  }
+  useEffect(() => {
+    getPokemons()
+  }, [])
 
-  const listPokemons = detail && detail.map((pokemon)=>{
-    return(
-      <div key={pokemon.id}pokemon={pokemon}>
-        <img src={pokemon.sprites.other.dream_world.front_default}/>
-        <p>{pokemon.base_stat.results}</p>
-        </div>
-    )
+  useEffect(() => {
+    const newPokemons = []
+    pokemons && pokemons.forEach((poke) => {
+      axios.get(`https://pokeapi.co/api/v2/pokemon/${poke.name}`)
+        .then((response) => {
+          console.log(response.data)
+          newPokemons.push(response.data)
+          if (newPokemons.length === 20) {
+            setDetail(newPokemons)
+          }
+        }).catch((error) => {
+          console.log(error)
+        })
     })
+  }, [pokemons])
+
+  const listPokemons = detail && detail.map((pokemon) => {
+    return (
+      <div key={pokemon.id} pokemon={pokemon}>
+        <img src={pokemon.sprites.other.dream_world.front_default} />
+        <div>Nome: {pokemon.name}</div>
+        <div>Habilidades: {pokemon.abilities.map((habilidade) => {
+          return (
+            <p>{habilidade.ability.name}</p>
+          )
+        })}</div>
+        <div>
+          <p>Estatística:</p>
+          {pokemon.stats.map((estatisticas) => {
+            return (
+              <p>{estatisticas.stat.name}: {estatisticas.base_stat}</p>
+            )
+          })}</div>
+      </div>
+    )
+  })
   return (
     <div>
       <HeaderContainer>
@@ -89,7 +101,7 @@ export default function DetailsPage() {
       </SubHeader>
       <DetailContainer>
         <h2>DetailContainer</h2>
-          {listPokemons}
+        {listPokemons}
       </DetailContainer>
       <FooterContainer>
         <p>@2022 - Todos os direitos reservados</p>

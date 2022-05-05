@@ -42,29 +42,15 @@ const FooterContainer = styled.div`
 
 export default function PokedexPage() {
   const navigate = useNavigate()
-    
-  // const [pokemons, setPokemons] = useState([])
-
-  // const getPokemons = () => {
-  //   axios.get("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
-  //     .then((res) => {
-  //       console.log(res)
-  //       setPokemons(res.data.results)
-  //     }).catch((err) => {
-  //       alert("erro")
-  //     })
-  // }
-  // useEffect(() => {
-  //   getPokemons()
-  // }, [])
 
   const paramns = useContext(Pokemon)
 
   const pokemonPokedex = paramns.pokedex && paramns.pokedex.map((poke) => {
     return(
-    <div>
+    <div key={poke.id}>
       {poke.name.toUpperCase()}
       <img src={poke.sprites.other.dream_world.front_default} />
+      <button onClick={() => paramns.removePokemon(poke.id)}>X</button>
     </div>
     )
   }) 

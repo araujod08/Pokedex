@@ -83,11 +83,15 @@ export default function HomePage() {
   const navigate = useNavigate()
 
   const paramns = useContext(Pokemon)
-  console.log(paramns)
+
+  const twoFunction = (navigate, id) => {
+    paramns.getPokemonDetailFunction(id)
+    goToDetailPage(navigate)
+  }
 
   const listPokemons = paramns.detail && paramns.detail.map((pokemon) => {
     return (
-      <Cardzinhos key={pokemon.id} pokemon={pokemon}>
+      <Cardzinhos key={pokemon.id}>
         <p>{pokemon.name.toUpperCase()}</p>
         <img src={pokemon.sprites.other.dream_world.front_default} />
         <Botoes>
@@ -95,7 +99,7 @@ export default function HomePage() {
             <button onClick={() => paramns.addPokedex(pokemon.id)}><img src={Icone} /></button>
           </Icone1>
           <div>
-            <button onClick={() => goToDetailPage(navigate)}><img src={Icone2} /></button>
+            <button onClick={() => twoFunction(navigate, pokemon.id)}><img src={Icone2} /></button>
           </div>
         </Botoes>
       </Cardzinhos>

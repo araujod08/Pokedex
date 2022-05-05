@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { goBack, goToDetailPage } from '../routes/Coordinator'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import Imagem from '../img/Header2.png'
+import { Pokemon } from '../GlobalState/Context'
 
 const HeaderContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #22262c;
-  display: flex;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #22262c;
+display: flex;
 flex-direction: column;
 align-items: center;
 background-color: #22262c;
@@ -39,9 +40,35 @@ const FooterContainer = styled.div`
   color: white;
 `
 
-
 export default function PokedexPage() {
   const navigate = useNavigate()
+    
+  // const [pokemons, setPokemons] = useState([])
+
+  // const getPokemons = () => {
+  //   axios.get("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
+  //     .then((res) => {
+  //       console.log(res)
+  //       setPokemons(res.data.results)
+  //     }).catch((err) => {
+  //       alert("erro")
+  //     })
+  // }
+  // useEffect(() => {
+  //   getPokemons()
+  // }, [])
+
+  const paramns = useContext(Pokemon)
+
+  const pokemonPokedex = paramns.pokedex && paramns.pokedex.map((poke) => {
+    return(
+    <div>
+      {poke.name.toUpperCase()}
+      <img src={poke.sprites.other.dream_world.front_default} />
+    </div>
+    )
+  }) 
+
   return (
     <div>
       <HeaderContainer>
@@ -52,6 +79,7 @@ export default function PokedexPage() {
         <button onClick={() => goToDetailPage(navigate)}>Detalhes</button>
       </SubHeader>
       <PokedexContainer>
+        {pokemonPokedex}
       </PokedexContainer>
       <FooterContainer>
         <p>@2022 - Todos os direitos reservados</p>

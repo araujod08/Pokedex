@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital@1&display=swap');
 body {
   margin: 0;
-  font-family: 'Courier Prime', monospace;
+  font-family: 'Press Start 2P', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: gray;
 }
-
 code {
-  font-family: 'Courier Prime', monospace;
+  font-family: 'Press Start 2P', cursive;
+font-family: 'Roboto', sans-serif;
+
 }

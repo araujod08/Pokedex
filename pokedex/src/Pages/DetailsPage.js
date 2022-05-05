@@ -90,23 +90,23 @@ export default function DetailsPage() {
               <p>{estatisticas.stat.name}: {estatisticas.base_stat}</p>
             )
           })}</div>
-          <div>
-            <p>Tipo:</p>
-            {pokemon.types.map((tipos)=>{
-              return(
-                <p>{tipos.type.name}</p>
-              )
-            })}
-          </div>
-          <div>
-            <p>Movimentos:</p>
-            {pokemon.moves.map((movimentos, index)=>{
-              return(
-                index < 4 && 
-                <p>{movimentos.move.name}</p>
-              )
-            })}
-          </div>
+        <div>
+          <p>Tipo:</p>
+          {pokemon.types.map((tipos) => {
+            return (
+              <p>{tipos.type.name}</p>
+            )
+          })}
+        </div>
+        <div>
+          <p>Movimentos:</p>
+          {pokemon.moves.map((movimentos, index) => {
+            return (
+              index < 4 &&
+              <p>{movimentos.move.name}</p>
+            )
+          })}
+        </div>
       </div>
     )
   })

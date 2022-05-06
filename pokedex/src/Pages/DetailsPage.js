@@ -17,7 +17,7 @@ width: 60vw;
 `
 const SubHeader = styled.div`
 display: flex;
-background-color: yellow;
+
 flex-direction: row;
 justify-content: space-around;
 button{
@@ -36,7 +36,6 @@ border: 0;
 z-index: 1;
 user-select: none;
 cursor: pointer;
-text-transform: uppercase;
 letter-spacing: 1px;
 white-space: unset;
 padding: .8rem 1.5rem;
@@ -54,8 +53,8 @@ height: 100%;
 content: '';
 transition: .7s cubic-bezier(0,.8,.26,.99);
 z-index: -1;
-background-color: #008542!important;
-box-shadow: 0 -4px rgb(21 108 0 / 50%) inset, 0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset, 4px 0 rgb(21 108 0 / 50%) inset;
+background-color: #ffcb05!important;
+box-shadow: 0 -4px rgb(34 38 44 / 50%) inset, 0 4px rgb(34 38 44 / 99%) inset, -4px 0 rgb(34 38 44 / 50%) inset, 4px 0 rgb(34 38 44 / 50%) inset;
 }
 
 :after {
@@ -72,7 +71,7 @@ transition: .7s cubic-bezier(0,.8,.26,.99);
 }
 
 :hover:before {
-box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+box-shadow: 0 -4px rgb(34 38 44 / 50%) inset, 0 4px rgb(34 38 44 / 20%) inset, -4px 0 rgb(34 38 44 / 20%) inset, 4px 0 rgb(34 38 44 / 50%) inset;
 }
 
 :hover:after {
@@ -94,12 +93,64 @@ box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 `
 
 const DetailContainer = styled.div`
+color: white;
 display: flex;
 flex-direction: column;
-align-items: center;
-background-color: blue;
-color: white;
+
 `
+const SubDetail = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+`
+const CardPokemon = styled.div`
+display: flex;
+width: 400px;
+height: 800px;
+justify-content: space-around;
+flex-direction: column;
+align-items: center;
+border: 5px double #dedede ;
+border-radius: 10px;
+img{
+width: 350px;
+}
+
+`
+const Habilidades = styled.div`
+display: flex;
+width: 250px;
+justify-content: space-between;
+flex-direction: column;
+align-items: center;
+border: 5px double #dedede ;
+border-radius: 10px;
+height: 100px;
+text-align: center;
+
+
+`
+const Tipos= styled.div`
+display: flex;
+width: 250px;
+justify-content: space-between;
+flex-direction: column;
+align-items: center;
+border: 5px double #dedede ;
+border-radius: 10px;
+height: 125px;
+`
+const Movimentos = styled.div`
+display: flex;
+width: 250px;
+justify-content: space-between;
+flex-direction: column;
+align-items: center;
+border: 5px double #dedede ;
+border-radius: 10px;
+
+`
+
 
 export default function DetailsPage() {
   const navigate = useNavigate()
@@ -115,43 +166,44 @@ export default function DetailsPage() {
         <button onClick={() => goToHomePage(navigate)}>Home</button>
       </SubHeader>
       <DetailContainer>
-        <h2>DetailContainer</h2>
+
         {paramns.detailsPokemon.name &&
-          <div>
+          <SubDetail>
+            <CardPokemon>
             <div>{paramns.detailsPokemon.name}</div>
             <img src={paramns.detailsPokemon.sprites.other.dream_world.front_default} />
             <img src={paramns.detailsPokemon.sprites.back_default} />
+            </CardPokemon>
+            <Habilidades>
             <div>Habilidades: {paramns.detailsPokemon.abilities.map((habilidade) => {
               return (
                 <p>{habilidade.ability.name}</p>
-              )
-            })}
-            </div>
-            <div>
-              <p>Estatística:</p>
-              {paramns.detailsPokemon.stats.map((estatisticas) => {
-                return (
-                  <p>{estatisticas.stat.name}: {estatisticas.base_stat}</p>
                 )
-              })}</div>
+              })}
+            </div>
+              </Habilidades>
+              <Tipos>
             <div>
               <p>Tipo:</p>
               {paramns.detailsPokemon.types.map((tipos) => {
                 return (
                   <p>{tipos.type.name}</p>
-                )
-              })}
+                  )
+                })}
             </div>
+                </Tipos>
+                <Movimentos>
             <div>
               <p>Movimentos:</p>
               {paramns.detailsPokemon.moves.map((movimentos, index) => {
                 return (
                   index < 4 &&
                   <p>{movimentos.move.name}</p>
-                )
-              })}
+                  )
+                })}
             </div>
-          </div>
+                </Movimentos>
+          </SubDetail>
         }
       </DetailContainer>
     </div>

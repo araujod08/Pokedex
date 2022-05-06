@@ -21,10 +21,10 @@ background-color: yellow;
 flex-direction: row;
 justify-content: space-around;
 button{
+font-family: 'Press Start 2P', cursive;
 width: 150px;
 height:50px;
 padding: 10px 40px;
-font-size: 18px;
 background-color: #008542;
 color: #fff;
 text-shadow: 0 2px 0 rgb(0 0 0 / 25%);

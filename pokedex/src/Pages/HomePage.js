@@ -20,10 +20,10 @@ display: flex;
 flex-direction: column;
 align-items: center;
 button{
+font-family: 'Press Start 2P', cursive;
 width: 150px;
 height:50px;
 padding: 10px 40px;
-font-size: 18px;
 background-color: #008542;
 color: #fff;
 text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
@@ -35,7 +35,6 @@ border: 0;
 z-index: 1;
 user-select: none;
 cursor: pointer;
-text-transform: uppercase;
 letter-spacing: 1px;
 white-space: unset;
 padding: .8rem 1.5rem;
@@ -134,13 +133,13 @@ text-align: center;
 font-size: 20px;
 }
 `
-const Footer2 = styled.div`
+const FooterCard = styled.div`
 
 button{
+font-family: 'Press Start 2P', cursive;
 width: 150px;
 height:50px;
 padding: 10px 40px;
-font-size: 18px;
 background-color: #008542;
 color: #fff;
 text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
@@ -160,35 +159,35 @@ text-decoration: none;
 font-weight: 900;
 transition: all 0.7s cubic-bezier(0,.8,.26,.99);
 :before{
- position: absolute;
- pointer-events: none;
- top: 0;
- left: 0;
- display: block;
- width: 100%;
- height: 100%;
- content: '';
- transition: .7s cubic-bezier(0,.8,.26,.99);
- z-index: -1;
- background-color: #008542!important;
- box-shadow: 0 -4px rgb(21 108 0 / 50%) inset, 0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset, 4px 0 rgb(21 108 0 / 50%) inset;
+position: absolute;
+pointer-events: none;
+top: 0;
+left: 0;
+display: block;
+width: 100%;
+height: 100%;
+content: '';
+transition: .7s cubic-bezier(0,.8,.26,.99);
+z-index: -1;
+background-color: #008542!important;
+box-shadow: 0 -4px rgb(21 108 0 / 50%) inset, 0 4px rgb(100 253 31 / 99%) inset, -4px 0 rgb(100 253 31 / 50%) inset, 4px 0 rgb(21 108 0 / 50%) inset;
 }
 
 :after {
- position: absolute;
- pointer-events: none;
- top: 0;
- left: 0;
- display: block;
- width: 100%;
- height: 100%;
- content: '';
- box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
- transition: .7s cubic-bezier(0,.8,.26,.99);
+position: absolute;
+pointer-events: none;
+top: 0;
+left: 0;
+display: block;
+width: 100%;
+height: 100%;
+content: '';
+box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+transition: .7s cubic-bezier(0,.8,.26,.99);
 }
 
 :hover:before {
- box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
 }
 
 :hover:after {
@@ -226,10 +225,10 @@ export default function HomePage() {
           <h3>{pokemon.name.toUpperCase()}</h3>
         </Header2>
         <img src={pokemon.sprites.other.dream_world.front_default} />
-        <Footer2>
+        <FooterCard>
           <button onClick={() => paramns.addPokedex(pokemon.id)}>Adicionar</button>
           <button onClick={() => twoFunction(navigate, pokemon.id)}>Detalhes</button>
-        </Footer2>
+        </FooterCard>
 
       </Cardzinhos>
     )

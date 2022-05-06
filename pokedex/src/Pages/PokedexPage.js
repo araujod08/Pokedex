@@ -24,10 +24,10 @@ background-color: yellow;
 flex-direction: row;
 justify-content: space-around;
 button{
+font-family: 'Press Start 2P', cursive;
 width: 150px;
 height:50px;
 padding: 10px 40px;
-font-size: 18px;
 background-color: #008542;
 color: #fff;
 text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
@@ -98,10 +98,43 @@ box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 
 const PokedexContainer = styled.div`
 display: flex;
+justify-content: center;
+color: white;
+background-image: linear-gradient(92deg, #AF40FF, #5B42F3 50%, #00DDEB);
+flex-direction:row;
+flex-wrap:wrap;
+height: 100vh;
+padding: 15px;
+gap: 20px;
+
+`
+
+const CardInterno = styled.div`
+display: flex;
+width: 300px;
+height: 300px;
+justify-content: space-between;
 flex-direction: column;
 align-items: center;
-background-color: blue;
-color: white;
+border: 5px double aqua ;
+border-radius: 10px;
+border-bottom-right-radius:0;
+border-bottom-left-radius: 0;
+img{
+max-width: 120px;
+max-height: 120px;
+}
+`
+const Header3 = styled.div`
+background-color: red;
+width: 300px;
+border-radius: 7px;
+border-bottom-right-radius:0;
+border-bottom-left-radius: 0;
+h3{
+text-align: center;
+font-size: 20px;
+}
 `
 
 export default function PokedexPage() {
@@ -111,11 +144,15 @@ export default function PokedexPage() {
 
   const pokemonPokedex = paramns.pokedex && paramns.pokedex.map((poke) => {
     return (
-      <div key={poke.id}>
-        {poke.name.toUpperCase()}
+      <CardInterno key={poke.id}>
+        <Header3>
+        <h3>{poke.name.toUpperCase()}</h3>
+        
+        </Header3>
+        
         <img src={poke.sprites.other.dream_world.front_default} />
         <button onClick={() => paramns.removePokemon(poke.id)}>X</button>
-      </div>
+      </CardInterno>
     )
   })
 

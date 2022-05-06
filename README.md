@@ -17,3 +17,4 @@ Link da API: https://pokeapi.co
 - No momento tudo não funciona.
 
 ## Imagens 
+![image](https://user-images.githubusercontent.com/98977257/167214407-bee0bb41-8841-4680-a17f-d5c5e47697f3.png)

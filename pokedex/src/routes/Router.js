@@ -1,6 +1,6 @@
-import HomePage from "../Pages/HomePage"
-import DetailsPage from "../Pages/DetailsPage"
-import PokedexPage from "../Pages/PokedexPage"
+import HomePage from "../Pages/HomePage/HomePage"
+import DetailsPage from "../Pages/DetailPage/DetailsPage"
+import PokedexPage from "../PokedexPage/PokedexPage"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 export const Router = () =>{

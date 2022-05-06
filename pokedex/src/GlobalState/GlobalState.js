@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Pokemon } from './Context'
 import axios from 'axios'
-import HomePage from '../Pages/HomePage'
 
 export const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([])
@@ -15,7 +14,6 @@ export const GlobalState = (props) => {
                 setPokemons(response.data.results)
             })
             .catch((error) => {
-                alert("A página não foi carregada por favor, tente novamente.")
             })
     }
 
@@ -34,7 +32,6 @@ export const GlobalState = (props) => {
                     }
                 })
                 .catch((error) => {
-                    console.log(error)
                 })
         })
     }, [pokemons])
@@ -50,6 +47,7 @@ export const GlobalState = (props) => {
             return poke.id !== id
         })
         setDetail(removePokemon)
+        alert("Parabéns, o pokémon foi adicionado com sucesso!")
     }
 
     const removePokemon = (id) => {
@@ -63,6 +61,7 @@ export const GlobalState = (props) => {
             return poke.id !== id
         })
         setPokedex(removePokemon)
+        alert("O pokémon foi removido com sucesso!")
     }
 
     const getPokemonDetailFunction = (id) => {

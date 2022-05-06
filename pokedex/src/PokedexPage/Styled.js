@@ -1,11 +1,6 @@
-import React, { useContext } from 'react'
-import { goBack, goToDetailPage } from '../routes/Coordinator'
-import { useNavigate } from 'react-router-dom'
-import styled from 'styled-components'
-import Imagem from '../img/Header2.png'
-import { Pokemon } from '../GlobalState/Context'
+import styled from "styled-components"
 
-const HeaderContainer = styled.div`
+export const HeaderContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -18,7 +13,8 @@ img{
 width: 60vw;
 }
 `
-const SubHeader = styled.div`
+
+export const SubHeader = styled.div`
 display: flex;
 justify-content: space-around;
 button{
@@ -57,7 +53,6 @@ z-index: -1;
 background-color: #ffcb05!important;
 box-shadow: 0 -4px rgb(34 38 44 / 50%) inset, 0 4px rgb(34 38 44 / 99%) inset, -4px 0 rgb(34 38 44 / 50%) inset, 4px 0 rgb(34 38 44 / 50%) inset;
 }
-
 :after {
 position: absolute;
 pointer-events: none;
@@ -70,43 +65,33 @@ content: '';
 box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
 transition: .7s cubic-bezier(0,.8,.26,.99);
 }
-
 :hover:before {
 box-shadow: 0 -4px rgb(34 38 44 / 50%) inset, 0 4px rgb(34 38 44 / 20%) inset, -4px 0 rgb(34 38 44 / 20%) inset, 4px 0 rgb(34 38 44 / 50%) inset;
 }
-
 :hover:after {
 box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
-
 }
-
 :active {
 transform: translateY(4px);
-
 }
-
 :active:after {
 box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
-
 }
-
 }
 `
 
-const PokedexContainer = styled.div`
+export const PokedexContainer = styled.div`
 display: flex;
 justify-content: center;
 color: #dedede;
-
 flex-direction:row;
 flex-wrap:wrap;
 height: 100vh;
 padding: 15px;
 gap: 20px;
-
 `
 
-const CardInterno = styled.div`
+export const CardInterno = styled.div`
 display: flex;
 width: 300px;
 height: 300px;
@@ -158,7 +143,6 @@ z-index: -1;
 background-color: #dc0a2d!important;
 box-shadow: 0 -4px rgb(34 38 44 / 50%) inset, 0 4px rgb(34 38 44 / 99%) inset, -4px 0 rgb(34 38 44 / 50%) inset, 4px 0 rgb(34 38 44 / 50%) inset;
 }
-
 :after {
 position: absolute;
 pointer-events: none;
@@ -171,29 +155,22 @@ content: '';
 box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
 transition: .7s cubic-bezier(0,.8,.26,.99);
 }
-
 :hover:before {
 box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
 }
-
 :hover:after {
 box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
-
 }
-
 :active {
 transform: translateY(4px);
-
 }
-
 :active:after {
 box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
-
 }
-
 }
 `
-const Header3 = styled.div`
+
+export const Header3 = styled.div`
 background-color: #dc0a2d;
 width: 300px;
 border-radius: 7px;
@@ -204,38 +181,3 @@ text-align: center;
 font-size: 20px;
 }
 `
-
-export default function PokedexPage() {
-  const navigate = useNavigate()
-
-  const paramns = useContext(Pokemon)
-
-  const pokemonPokedex = paramns.pokedex && paramns.pokedex.map((poke) => {
-    return (
-      <CardInterno key={poke.id}>
-        <Header3>
-        <h3>{poke.name.toUpperCase()}</h3>
-        
-        </Header3>
-        
-        <img src={poke.sprites.other.dream_world.front_default} />
-        <button onClick={() => paramns.removePokemon(poke.id)}>Remover</button>
-      </CardInterno>
-    )
-  })
-
-  return (
-    <div>
-      <HeaderContainer>
-        <img src={Imagem} />
-      </HeaderContainer>
-      <SubHeader>
-        <button onClick={() => goBack(navigate)}>Voltar</button>
-      </SubHeader>
-      <PokedexContainer>
-        {pokemonPokedex}
-      </PokedexContainer>
-    </div>
-  )
-}
-

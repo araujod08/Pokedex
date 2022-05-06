@@ -35,7 +35,6 @@ border: 0;
 z-index: 1;
 user-select: none;
 cursor: pointer;
-text-transform: uppercase;
 letter-spacing: 1px;
 white-space: unset;
 padding: .8rem 1.5rem;

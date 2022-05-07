@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { goBack, goToHomePage } from '../../routes/Coordinator'
 import Imagem from '../../img/Header2.png'
 import { Pokemon } from '../../GlobalState/Context'
-import { HeaderContainer, SubHeader, DetailContainer, SubDetail, CardPokemon, Habilidades, Tipos, Movimentos } from './Styled'
+import { HeaderContainer, SubHeader, DetailContainer, SubDetail, CardPokemon, Habilidades, Tipos, Movimentos, Div, Header2 } from './Styled'
 
 export default function DetailsPage() {
   const navigate = useNavigate()
@@ -22,39 +22,34 @@ export default function DetailsPage() {
         {paramns.detailsPokemon.name &&
           <SubDetail>
             <CardPokemon>
-              <div>{paramns.detailsPokemon.name}</div>
+              <Header2><h3>{paramns.detailsPokemon.name.toUpperCase()}</h3></Header2>
               <img src={paramns.detailsPokemon.sprites.other.dream_world.front_default} />
               <img src={paramns.detailsPokemon.sprites.back_default} />
             </CardPokemon>
-            <Habilidades>
-              <div>Habilidades: {paramns.detailsPokemon.abilities.map((habilidade) => {
-                return (
-                  <p>{habilidade.ability.name}</p>
-                )
-              })}
-              </div>
-            </Habilidades>
-            <Tipos>
-              <div>
-                <p>Tipo:</p>
-                {paramns.detailsPokemon.types.map((tipos) => {
+            <Div>
+              <Habilidades>
+                <Header2>Abilities:</Header2> {paramns.detailsPokemon.abilities.map((habilidade) => {
                   return (
-                    <p>{tipos.type.name}</p>
+                    <p><li>{habilidade.ability.name}</li></p>
                   )
                 })}
-              </div>
-            </Tipos>
-            <Movimentos>
-              <div>
-                <p>Movimentos:</p>
-                {paramns.detailsPokemon.moves.map((movimentos, index) => {
+              </Habilidades>
+              <Tipos>
+                <Header2>Type:</Header2> {paramns.detailsPokemon.types.map((tipos) => {
+                  return (
+                    <p><li>{tipos.type.name}</li></p>
+                  )
+                })}
+              </Tipos>
+              <Movimentos>
+                <Header2>Moves:</Header2> {paramns.detailsPokemon.moves.map((movimentos, index) => {
                   return (
                     index < 4 &&
-                    <p>{movimentos.move.name}</p>
+                    <p><li>{movimentos.move.name}</li></p>
                   )
                 })}
-              </div>
-            </Movimentos>
+              </Movimentos>
+            </Div>
           </SubDetail>
         }
       </DetailContainer>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { goToPokedexPage, goToDetailPage } from '../../routes/Coordinator'
 import Imagem from '../../img/Header2.png'
 import { Pokemon } from '../../GlobalState/Context'
-import { HeaderContainer, SubHeader, CardContainer, Cardzinhos, Header2, FooterCard} from './Styled'
+import { HeaderContainer, SubHeader, CardContainer, Cardzinhos, Header2, FooterCard } from './Styled'
 
 export default function HomePage() {
   const navigate = useNavigate()

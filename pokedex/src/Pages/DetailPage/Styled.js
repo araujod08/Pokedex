@@ -12,7 +12,7 @@ width: 60vw;
 export const SubHeader = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: space-around;
+justify-content: space-evenly;
 button{
 font-family: 'Press Start 2P', cursive;
 width: 150px;
@@ -79,7 +79,8 @@ box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 export const DetailContainer = styled.div`
 color: white;
 display: flex;
-flex-direction: column;
+flex-direction: row;
+justify-content: center;
 `
 
 export const SubDetail = styled.div`
@@ -87,49 +88,70 @@ display: flex;
 flex-direction: row;
 justify-content: space-around;
 `
+
+export const Header2 = styled.div`
+background-color: #dc0a2d;
+width: auto;
+border-radius: 7px;
+border-bottom-right-radius:0;
+border-bottom-left-radius: 0;
+h3{
+text-align: center;
+font-size: 20px;
+}
+`
+
 export const CardPokemon = styled.div`
 display: flex;
-width: 400px;
-height: 800px;
-justify-content: space-around;
 flex-direction: column;
+width: 450px;
+height: auto;
+align-items: flex-end;
+justify-content: space-around;
 align-items: center;
-border: 5px double #dedede ;
+border: 5px double #dedede;
 border-radius: 10px;
 img{
-width: 350px;
+width: 300px;
 }
 `
 
 export const Habilidades = styled.div`
 display: flex;
-width: 250px;
-justify-content: space-between;
 flex-direction: column;
-align-items: center;
 border: 5px double #dedede ;
 border-radius: 10px;
-height: 100px;
 text-align: center;
+width: 250px;
+height: 250px;
+justify-content: center;
 `
 
 export const Tipos = styled.div`
 display: flex;
-width: 250px;
-justify-content: space-between;
 flex-direction: column;
-align-items: center;
 border: 5px double #dedede ;
 border-radius: 10px;
-height: 125px;
+text-align: center;
+width: 250px;
+height: 250px;
+justify-content: center;
 `
 
 export const Movimentos = styled.div`
 display: flex;
-width: 250px;
-justify-content: space-between;
+width: auto;
+text-align: center;
 flex-direction: column;
-align-items: center;
 border: 5px double #dedede ;
 border-radius: 10px;
+justify-content: center;
+width: 250px;
+height: 250px;
+`
+
+export const Div = styled.div`
+justify-content: space-around;
+display: flex;
+flex-direction: column;
 `

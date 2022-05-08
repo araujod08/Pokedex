@@ -8,7 +8,7 @@ Link da API: https://pokeapi.co
 ## Nome dos integrantes: 
 - Ariane Tier de Mello
 - Davi de Araujo Gomes
-- Erick Felipe Silva e Silva
+- Eric Felipe Silva e Silva
 
 ## O que funciona:
 - No momento nada funciona.

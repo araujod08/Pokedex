@@ -1,7 +1,7 @@
 ![pokedex](https://user-images.githubusercontent.com/98977257/166308806-5981b6c9-e4ed-4705-a794-8123e6ae48fc.png)
 
 ## Sobre
-Link do Surge: www.link.com.br
+Link do Surge: unusual-meat.surge.sh
 
 Link da API: https://pokeapi.co
 

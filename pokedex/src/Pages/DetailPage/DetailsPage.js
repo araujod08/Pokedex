@@ -27,13 +27,6 @@ export default function DetailsPage() {
               <img src={paramns.detailsPokemon.sprites.back_default} />
             </CardPokemon>
             <Div>
-              <Habilidades>
-                <Header2>Abilities:</Header2> {paramns.detailsPokemon.abilities.map((habilidade) => {
-                  return (
-                    <p><li>{habilidade.ability.name}</li></p>
-                  )
-                })}
-              </Habilidades>
               <Tipos>
                 <Header2>Type:</Header2> {paramns.detailsPokemon.types.map((tipos) => {
                   return (
@@ -41,6 +34,13 @@ export default function DetailsPage() {
                   )
                 })}
               </Tipos>
+              <Habilidades>
+                <Header2><h1>Abilities:</h1></Header2> {paramns.detailsPokemon.abilities.map((habilidade) => {
+                  return (
+                    <p><li>{habilidade.ability.name}</li></p>
+                  )
+                })}
+              </Habilidades>
               <Movimentos>
                 <Header2>Moves:</Header2> {paramns.detailsPokemon.moves.map((movimentos, index) => {
                   return (

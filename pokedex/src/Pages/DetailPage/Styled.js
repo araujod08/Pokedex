@@ -11,8 +11,9 @@ width: 60vw;
 `
 export const SubHeader = styled.div`
 display: flex;
-flex-direction: row;
-justify-content: space-evenly;
+justify-content: center;
+gap: 20px;
+margin-bottom: 10px;
 button{
 font-family: 'Press Start 2P', cursive;
 width: 150px;
@@ -77,54 +78,62 @@ box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 `
 
 export const DetailContainer = styled.div`
-color: white;
 display: flex;
-flex-direction: row;
-justify-content: center;
+justify-content: space-around;
 `
 
 export const SubDetail = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-around;
+
 `
 
 export const Header2 = styled.div`
 background-color: #dc0a2d;
-width: auto;
 border-radius: 7px;
 border-bottom-right-radius:0;
 border-bottom-left-radius: 0;
+margin-bottom: 20px;
 h3{
 text-align: center;
-font-size: 20px;
+font-size: 15px;
+width: 150px;
 }
 `
 
 export const CardPokemon = styled.div`
 display: flex;
 flex-direction: column;
-width: 450px;
-height: auto;
-align-items: flex-end;
-justify-content: space-around;
-align-items: center;
+width: 150px;
+height:auto;
 border: 5px double #dedede;
 border-radius: 10px;
+align-items: center;
 img{
-width: 300px;
+max-width: 140px;
+max-height: 140px;
+margin-bottom:50px;
+margin-top: 50px;
 }
 `
 
 export const Habilidades = styled.div`
 display: flex;
-flex-direction: column;
 border: 5px double #dedede ;
 border-radius: 10px;
+width: 180px;
+height: 180px;
+flex-direction: column;
 text-align: center;
-width: 250px;
-height: 250px;
-justify-content: center;
+p{
+font-size: 12px;
+list-style-type: none;
+
+}
+h1{
+font-size: 12px;
+}
 `
 
 export const Tipos = styled.div`
@@ -133,9 +142,14 @@ flex-direction: column;
 border: 5px double #dedede ;
 border-radius: 10px;
 text-align: center;
-width: 250px;
-height: 250px;
-justify-content: center;
+width: 180px;
+max-height: 180px;
+list-style-type: none;
+p{
+font-size: 12px;
+list-style-type: none;
+
+}
 `
 
 export const Movimentos = styled.div`
@@ -145,9 +159,13 @@ text-align: center;
 flex-direction: column;
 border: 5px double #dedede ;
 border-radius: 10px;
-justify-content: center;
-width: 250px;
-height: 250px;
+width: 180px;
+height: 180px;
+list-style-type: none;
+p{
+font-size: 10px;
+list-style-type: none;
+}
 `
 
 export const Div = styled.div`

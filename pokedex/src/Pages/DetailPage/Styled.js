@@ -149,6 +149,7 @@ list-style-type: none;
 p{
 font-size: 20px;
 list-style-type: none;
+
 }
 `
 

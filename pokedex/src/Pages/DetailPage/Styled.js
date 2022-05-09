@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const HeaderContainer = styled.div`
+
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -80,6 +81,7 @@ box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
 export const DetailContainer = styled.div`
 display: flex;
 justify-content: space-around;
+color:#dedede;
 `
 
 export const SubDetail = styled.div`
@@ -122,8 +124,8 @@ export const Habilidades = styled.div`
 display: flex;
 border: 5px double #dedede ;
 border-radius: 10px;
-width: 180px;
-height: 180px;
+width: 190px;
+height: 190px;
 flex-direction: column;
 text-align: center;
 p{
@@ -142,8 +144,8 @@ flex-direction: column;
 border: 5px double #dedede ;
 border-radius: 10px;
 text-align: center;
-width: 180px;
-max-height: 180px;
+width: 190px;
+max-height: 190px;
 list-style-type: none;
 p{
 font-size: 12px;
@@ -159,8 +161,8 @@ text-align: center;
 flex-direction: column;
 border: 5px double #dedede ;
 border-radius: 10px;
-width: 180px;
-height: 180px;
+width: 190px;
+height: 190px;
 list-style-type: none;
 p{
 font-size: 10px;

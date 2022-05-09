@@ -47,7 +47,7 @@ export const GlobalState = (props) => {
             return poke.id !== id
         })
         setDetail(removePokemon)
-        alert("Parabéns, o pokémon foi adicionado com sucesso!")
+        
     }
 
     const removePokemon = (id) => {

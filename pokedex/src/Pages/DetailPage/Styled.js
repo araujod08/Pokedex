@@ -107,14 +107,14 @@ width: 150px;
 export const CardPokemon = styled.div`
 display: flex;
 flex-direction: column;
-width: 150px;
+width: 240px;
 height:auto;
 border: 5px double #dedede;
 border-radius: 10px;
 align-items: center;
 img{
-max-width: 140px;
-max-height: 140px;
+max-width: 190px;
+max-height: 190px;
 margin-bottom:50px;
 margin-top: 50px;
 }
@@ -124,14 +124,13 @@ export const Habilidades = styled.div`
 display: flex;
 border: 5px double #dedede ;
 border-radius: 10px;
-width: 190px;
+width: 290px;
 height: 190px;
 flex-direction: column;
 text-align: center;
 p{
-font-size: 12px;
+font-size: 20px;
 list-style-type: none;
-
 }
 h1{
 font-size: 12px;
@@ -144,13 +143,12 @@ flex-direction: column;
 border: 5px double #dedede ;
 border-radius: 10px;
 text-align: center;
-width: 190px;
-max-height: 190px;
+width: 290px;
+height: 190px;
 list-style-type: none;
 p{
-font-size: 12px;
+font-size: 20px;
 list-style-type: none;
-
 }
 `
 
@@ -161,11 +159,11 @@ text-align: center;
 flex-direction: column;
 border: 5px double #dedede ;
 border-radius: 10px;
-width: 190px;
-height: 190px;
+width: 290px;
+height: 290px;
 list-style-type: none;
 p{
-font-size: 10px;
+font-size: 20px;
 list-style-type: none;
 }
 `

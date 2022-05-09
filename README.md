@@ -11,10 +11,10 @@ Link da API: https://pokeapi.co
 - Eric Felipe Silva e Silva
 
 ## O que funciona:
-- No momento nada funciona.
+- Está tudo funcionando como o esperado.
 
 ## O que não funciona: 
-- No momento tudo não funciona.
+- No momento não há problemas/erros.
 
 ## Imagens 
 ![image](https://user-images.githubusercontent.com/98977257/167214407-bee0bb41-8841-4680-a17f-d5c5e47697f3.png)

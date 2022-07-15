@@ -1,20 +1,18 @@
-![pokedex](https://user-images.githubusercontent.com/98977257/166308806-5981b6c9-e4ed-4705-a794-8123e6ae48fc.png)
+<p id= "voltar"><img src="https://user-images.githubusercontent.com/98977257/166308806-5981b6c9-e4ed-4705-a794-8123e6ae48fc.png"/>
 
-## Sobre
-Link do Surge: https://bloody-road.surge.sh
+<p>
+<a href="#sobre">Sobre</a> |
+<a href="#link">Link Surge</a> |
+<a href="#link1">Link API</a> |
 
-Link da API: https://pokeapi.co
+</p>
 
-## Nome dos integrantes: 
-- Ariane Tier de Mello
-- Davi de Araujo Gomes
-- Eric Felipe Silva e Silva
+<h1 id="sobre">🕹 Projeto Pokédex</h1>
 
-## O que funciona:
-- Está tudo funcionando como o esperado.
+<p>Criamos uma Pokédex, utilizamos Poke Api como fonte de dados para o projeto. Ela é uma API pública, bastante utilizada como fonte de dados para aplicações focadas em aprendizado de programação.
 
-## O que não funciona: 
-- No momento não há problemas/erros.
+<h2 id="link">🔗 Link surge: Link para visualização do site</h2>
+<a href="https://bloody-road.surge.sh">Pokédex</a>
 
-## Imagens 
-![image](https://user-images.githubusercontent.com/98977257/167214407-bee0bb41-8841-4680-a17f-d5c5e47697f3.png)
+<h2 id="link1">🔗 Link API: Link para visualização da documentação</h2>
+<a href="https://pokeapi.co">Poké API</a>
